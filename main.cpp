@@ -6,18 +6,19 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include <vector>
+
 
 int main() {
     int nRep = 0;
-    std::vector<std::string> strVec;
+
     std::string word;
     std::string str;
     std::ifstream file;
-    file.open("C:\\Users\\777\\CLionProjects\\19.5.1\\Text.text");
+    file.open("Text.text");
     if(!file.is_open())
     {
         std::cout << "Error!";
+        return 0;
     }
     else
     {
@@ -27,7 +28,7 @@ int main() {
         while (!file.eof())
         {
             file >> str;
-            strVec.push_back(str);
+
             if(str == word) ++nRep;
         }
     }
